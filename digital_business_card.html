@@ -1,0 +1,578 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Digital Business Card of Dambarudhar Kar - Sr. Manager, Swain & Sons Power Tech Pvt. Ltd. Energy Audit, Renewable Energy, Power Generation & Compliance Consultancy">
+    <title>Dambarudhar Kar - Digital Business Card | Power Tech</title>
+    <!-- Open Graph / Social Share Tags -->
+    <meta property="og:title" content="Dambarudhar Kar - Digital Business Card | Power Tech">
+    <meta property="og:description" content="Digital Business Card of Dambarudhar Kar - Sr. Manager, Swain & Sons Power Tech Pvt. Ltd.">
+    <meta property="og:image" content="https://yourdomain.com/preview-image.jpg">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://dambarudharkar.github.io/digital-business-card/">
+    <meta property="og:site_name" content="Power Tech Digital Business Card">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Dambarudhar Kar - Digital Business Card | Power Tech">
+    <meta name="twitter:description" content="Digital Business Card of Dambarudhar Kar - Sr. Manager, Swain & Sons Power Tech Pvt. Ltd.">
+    <meta name="twitter:image" content="https://yourdomain.com/preview-image.jpg">
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts (Inter & Outfit) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <!-- QRCode.js Library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            red: '#D92525',
+                            darkRed: '#B01C1C',
+                            blue: '#1E293B',
+                            accent: '#F97316',
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        heading: ['Outfit', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        /* 3D Flip Card Styles */
+        .perspective-1000 {
+            perspective: 1000px;
+        }
+        .transform-style-3d {
+            transform-style: preserve-3d;
+        }
+        .backface-hidden {
+            backface-visibility: hidden;
+            -webkit-backface-visibility: hidden;
+        }
+        .rotate-y-180 {
+            transform: rotateY(180deg);
+        }
+        
+        /* Custom Scrollbar for Services List */
+        .custom-scrollbar::-webkit-scrollbar {
+            width: 5px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-track {
+            background: rgba(0, 0, 0, 0.05);
+            border-radius: 10px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background: rgba(217, 37, 37, 0.4);
+            border-radius: 10px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+            background: rgba(217, 37, 37, 0.8);
+        }
+
+        /* Subtle Glow & Ambient Animation */
+        @keyframes pulseGlow {
+            0%, 100% { opacity: 0.4; filter: blur(20px); }
+            50% { opacity: 0.7; filter: blur(28px); }
+        }
+        .animate-glow {
+            animation: pulseGlow 6s infinite ease-in-out;
+        }
+    </style>
+
+    <!-- Hide Netlify Badge -->
+    <style>
+      /* Hides the Netlify badge */
+      iframe[src*="netlify"] {
+        display: none !important;
+      }
+    </style>
+</head>
+<body class="bg-slate-950 text-slate-100 font-sans min-h-screen flex flex-col justify-between items-center p-4 sm:p-6 md:p-8 relative overflow-x-hidden selection:bg-red-500 selection:text-white">
+
+    <!-- Ambient Background Blobs -->
+    <div class="fixed top-10 left-1/2 -translate-x-1/2 w-[350px] sm:w-[500px] h-[350px] sm:h-[500px] bg-red-600/20 rounded-full animate-glow pointer-events-none -z-10"></div>
+    <div class="fixed bottom-10 right-10 w-[250px] sm:w-[350px] h-[250px] sm:h-[350px] bg-amber-600/10 rounded-full animate-glow pointer-events-none -z-10" style="animation-delay: 2s;"></div>
+
+    <!-- Header Tools / Quick Controls -->
+    <header class="w-full max-w-xl flex justify-between items-center mb-4 z-20">
+        <div class="flex items-center gap-2">
+            <span class="h-3 w-3 rounded-full bg-red-500 inline-block animate-ping"></span>
+            <span class="text-xs uppercase tracking-widest text-slate-400 font-semibold">Interactive Card</span>
+        </div>
+        <div class="flex items-center gap-3">
+            <button id="themeToggleBtn" title="Toggle Theme" class="p-2.5 rounded-full bg-slate-900/80 border border-slate-800 text-slate-300 hover:text-white hover:border-slate-700 transition-all backdrop-blur-md">
+                <i class="fa-solid fa-moon text-sm"></i>
+            </button>
+            <button id="flipBtnTop" title="Flip Card Side" class="px-3.5 py-1.5 rounded-full bg-red-600/20 border border-red-500/30 text-red-400 hover:bg-red-600 hover:text-white transition-all text-xs font-semibold backdrop-blur-md flex items-center gap-2">
+                <i class="fa-solid fa-rotate"></i> Flip Side
+            </button>
+        </div>
+    </header>
+
+    <!-- Main Content Container -->
+    <main class="w-full max-w-xl flex-1 flex flex-col items-center justify-center my-auto z-10">
+
+        <!-- 3D Card Perspective Wrapper -->
+        <div class="w-full perspective-1000 my-2">
+            <!-- Flip Canvas Container -->
+            <div id="cardInner" class="w-full relative transform-style-3d transition-transform duration-700 ease-in-out cursor-pointer min-h-[460px] sm:min-h-[480px]">
+                
+                <!-- FRONT OF THE BUSINESS CARD -->
+                <div class="absolute inset-0 w-full h-full rounded-3xl bg-slate-900/90 border border-slate-800/80 backdrop-blur-xl shadow-2xl p-6 sm:p-8 flex flex-col justify-between backface-hidden overflow-hidden group">
+                    <!-- Subtle Card Top Accent Bar -->
+                    <div class="absolute top-0 left-0 right-0 h-1.5 bg-gradient-to-r from-red-600 via-amber-500 to-red-600"></div>
+
+                    <!-- Watermark Logo Outline -->
+                    <div class="absolute -right-12 -bottom-12 opacity-5 pointer-events-none">
+                        <i class="fa-solid fa-bolt-lightning text-[240px] text-white"></i>
+                    </div>
+
+                    <!-- Top Section: Company Logo Header & Person Details -->
+                    <div>
+                        <div class="flex flex-wrap justify-between items-start gap-4 mb-6">
+                            <!-- Logo Brand Badge -->
+                            <div class="flex items-center gap-3">
+                                <div class="bg-gradient-to-br from-red-600 to-red-700 text-white font-black text-xl px-3 py-2 rounded-xl shadow-lg border border-red-500/40 flex items-center justify-center gap-1.5">
+                                    <i class="fa-solid fa-bolt"></i>
+                                    <span>Power Tech</span>
+                                </div>
+                                <div>
+                                    <p class="text-xs italic text-red-400 font-medium tracking-wide">"We bring lights in life..."</p>
+                                </div>
+                            </div>
+                            
+                            <!-- Flip Icon Hint -->
+                            <span class="text-slate-500 group-hover:text-red-400 transition-colors text-xs flex items-center gap-1 font-medium bg-slate-800/50 px-2.5 py-1 rounded-full border border-slate-700/50">
+                                <i class="fa-solid fa-arrow-rotate-right text-xs"></i> Tap to flip
+                            </span>
+                        </div>
+
+                        <!-- Cardholder Identity -->
+                        <div class="mt-4 border-l-4 border-red-600 pl-4 py-0.5">
+                            <h1 class="text-2xl sm:text-3xl font-bold font-heading text-slate-50 tracking-tight">Dambarudhar Kar</h1>
+                            <p class="text-red-400 font-semibold text-base sm:text-lg">Sr. Manager</p>
+                            <p class="text-slate-300 font-medium text-xs sm:text-sm mt-1">Swain & Sons Power Tech Pvt. Ltd.</p>
+                        </div>
+                    </div>
+
+                    <!-- Middle Section: Contact Details List -->
+                    <div class="my-4 space-y-2.5 text-xs sm:text-sm text-slate-300">
+                        <!-- Phone Numbers -->
+                        <div class="flex items-start gap-3">
+                            <div class="w-7 h-7 rounded-lg bg-slate-800/80 text-red-400 flex items-center justify-center flex-shrink-0 mt-0.5 border border-slate-700/60">
+                                <i class="fa-solid fa-phone text-xs"></i>
+                            </div>
+                            <div>
+                                <div class="flex flex-wrap items-center gap-x-2 gap-y-1">
+                                    <a href="tel:+916742954256" class="hover:text-red-400 transition-colors font-medium">0674-2954256 (Office)</a>
+                                </div>
+                                <div class="flex flex-wrap items-center gap-x-2.5 gap-y-1 text-slate-300 mt-1">
+                                    <a href="tel:+919124082093" class="hover:text-red-400 transition-colors">+91 9124082093</a>
+                                    <span class="text-slate-600">•</span>
+                                    <a href="tel:+918093533005" class="hover:text-red-400 transition-colors">+91 8093533005</a>
+                                    <span class="text-slate-600">•</span>
+                                    <a href="tel:+919124082092" class="hover:text-red-400 transition-colors">+91 9124082092</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Email Addresses -->
+                        <div class="flex items-center gap-3">
+                            <div class="w-7 h-7 rounded-lg bg-slate-800/80 text-red-400 flex items-center justify-center flex-shrink-0 border border-slate-700/60">
+                                <i class="fa-solid fa-envelope text-xs"></i>
+                            </div>
+                            <div class="flex flex-wrap items-center gap-x-2 gap-y-1">
+                                <a href="mailto:project@pwrtech.com" class="hover:text-red-400 transition-colors">project@pwrtech.com</a>
+                                <span class="text-slate-600">•</span>
+                                <a href="mailto:sspt12@gmail.com" class="hover:text-red-400 transition-colors">sspt12@gmail.com</a>
+                            </div>
+                        </div>
+
+                        <!-- Websites -->
+                        <div class="flex items-center gap-3">
+                            <div class="w-7 h-7 rounded-lg bg-slate-800/80 text-red-400 flex items-center justify-center flex-shrink-0 border border-slate-700/60">
+                                <i class="fa-solid fa-globe text-xs"></i>
+                            </div>
+                            <div class="flex flex-wrap items-center gap-x-3 gap-y-1 font-medium text-red-400">
+                                <a href="http://www.pwrtch.com" target="_blank" rel="noopener noreferrer" class="hover:underline flex items-center gap-1">
+                                    www.pwrtch.com <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i>
+                                </a>
+                                <span class="text-slate-600">•</span>
+                                <a href="https://www.powerbazar.in/" target="_blank" rel="noopener noreferrer" class="hover:underline flex items-center gap-1">
+                                    https://www.powerbazar.in/ <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i>
+                                </a>
+                            </div>
+                        </div>
+
+                        <!-- Office Address -->
+                        <div class="flex items-start gap-3">
+                            <div class="w-7 h-7 rounded-lg bg-slate-800/80 text-red-400 flex items-center justify-center flex-shrink-0 mt-0.5 border border-slate-700/60">
+                                <i class="fa-solid fa-location-dot text-xs"></i>
+                            </div>
+                            <p class="text-slate-300 leading-snug">
+                                K-8-82, Kalinga Nagar, Ghatikia, Bhubaneswar - 751029, Odisha
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Bottom Bar Indicator -->
+                    <div class="pt-2 border-t border-slate-800/80 flex justify-between items-center text-[11px] text-slate-400">
+                        <span>Tap anywhere to flip card back</span>
+                        <span class="text-red-400 font-semibold flex items-center gap-1">
+                            Services & Capabilities <i class="fa-solid fa-chevron-right text-[9px]"></i>
+                        </span>
+                    </div>
+                </div>
+
+                <!-- BACK OF THE BUSINESS CARD -->
+                <div class="absolute inset-0 w-full h-full rounded-3xl bg-slate-900/95 border border-slate-800/80 backdrop-blur-xl shadow-2xl p-6 sm:p-7 flex flex-col justify-between backface-hidden rotate-y-180 overflow-hidden">
+                    <!-- Subtle Card Top Accent Bar -->
+                    <div class="absolute top-0 left-0 right-0 h-1.5 bg-gradient-to-r from-red-600 via-amber-500 to-red-600"></div>
+
+                    <div>
+                        <!-- Header -->
+                        <div class="flex justify-between items-center border-b border-slate-800 pb-3 mb-3">
+                            <div class="flex items-center gap-2">
+                                <div class="bg-red-600 text-white font-bold text-xs px-2.5 py-1 rounded-md">
+                                    Power Tech
+                                </div>
+                                <h2 class="text-xs sm:text-sm font-bold text-slate-200 uppercase tracking-wider">Services & Capabilities</h2>
+                            </div>
+                            <span class="text-slate-400 text-xs flex items-center gap-1">
+                                <i class="fa-solid fa-rotate-left"></i> Front Side
+                            </span>
+                        </div>
+
+                        <!-- Services List Grid -->
+                        <div>
+                            <p class="text-[11px] font-semibold text-slate-400 uppercase tracking-wider mb-2">Areas of Expertise</p>
+                            <div class="max-h-[250px] overflow-y-auto pr-1 custom-scrollbar">
+                                <div class="grid grid-cols-1 sm:grid-cols-2 gap-1.5 text-xs text-slate-300">
+                                    <div class="flex items-center gap-2 bg-slate-800/30 p-1.5 rounded border border-slate-800">
+                                        <i class="fa-solid fa-circle-check text-red-500 text-[10px]"></i> Energy Audit
+                                    </div>
+                                    <div class="flex items-center gap-2 bg-slate-800/30 p-1.5 rounded border border-slate-800">
+                                        <i class="fa-solid fa-circle-check text-red-500 text-[10px]"></i> Energy Management
+                                    </div>
+                                    <div class="flex items-center gap-2 bg-slate-800/30 p-1.5 rounded border border-slate-800">
+                                        <i class="fa-solid fa-circle-check text-red-500 text-[10px]"></i> Renewable Energy Project
+                                    </div>
+                                    <div class="flex items-center gap-2 bg-slate-800/30 p-1.5 rounded border border-slate-800">
+                                        <i class="fa-solid fa-circle-check text-red-500 text-[10px]"></i> Power Generation Project
+                                    </div>
+                                    <div class="flex items-center gap-2 bg-slate-800/30 p-1.5 rounded border border-slate-800">
+                                        <i class="fa-solid fa-circle-check text-red-500 text-[10px]"></i> Transmission & Distribution Systems
+                                    </div>
+                                    <div class="flex items-center gap-2 bg-slate-800/30 p-1.5 rounded border border-slate-800">
+                                        <i class="fa-solid fa-circle-check text-red-500 text-[10px]"></i> Preparation of DPR / TEFR
+                                    </div>
+                                    <div class="flex items-center gap-2 bg-slate-800/30 p-1.5 rounded border border-slate-800">
+                                        <i class="fa-solid fa-circle-check text-red-500 text-[10px]"></i> Electricity Regulatory Compliance
+                                    </div>
+                                    <div class="flex items-center gap-2 bg-slate-800/30 p-1.5 rounded border border-slate-800">
+                                        <i class="fa-solid fa-circle-check text-red-500 text-[10px]"></i> Power Trading
+                                    </div>
+                                    <div class="flex items-center gap-2 bg-slate-800/30 p-1.5 rounded border border-slate-800">
+                                        <i class="fa-solid fa-circle-check text-red-500 text-[10px]"></i> REC Scheme & PRO Compliance
+                                    </div>
+                                    <div class="flex items-center gap-2 bg-slate-800/30 p-1.5 rounded border border-slate-800">
+                                        <i class="fa-solid fa-circle-check text-red-500 text-[10px]"></i> ESCO & RESCO Activities
+                                    </div>
+                                    <div class="flex items-center gap-2 bg-slate-800/30 p-1.5 rounded border border-slate-800">
+                                        <i class="fa-solid fa-circle-check text-red-500 text-[10px]"></i> Sustainable Manufacturing
+                                    </div>
+                                    <div class="flex items-center gap-2 bg-slate-800/30 p-1.5 rounded border border-slate-800">
+                                        <i class="fa-solid fa-circle-check text-red-500 text-[10px]"></i> Workshop & Training
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Bottom Indicator -->
+                    <div class="pt-2 border-t border-slate-800/80 flex justify-between items-center text-[11px] text-slate-400">
+                        <span class="text-slate-400">Tap to view main contacts</span>
+                        <span class="text-red-400 font-semibold">Swain & Sons Power Tech</span>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- Quick Action Bar -->
+        <div class="w-full grid grid-cols-2 sm:grid-cols-4 gap-3 mt-4">
+            <!-- Save Contact Button -->
+            <button id="downloadVCardBtn" class="flex items-center justify-center gap-2 px-4 py-3 rounded-2xl bg-red-600 hover:bg-red-500 text-white font-semibold text-xs sm:text-sm shadow-lg shadow-red-600/30 transition-all hover:scale-[1.02] active:scale-[0.98]">
+                <i class="fa-solid fa-address-book text-base"></i>
+                <span>Save Contact</span>
+            </button>
+
+            <!-- Quick Call Action Button -->
+            <a href="tel:+919124082093" class="flex items-center justify-center gap-2 px-4 py-3 rounded-2xl bg-slate-900 border border-slate-800 hover:border-slate-700 text-slate-200 hover:text-white font-semibold text-xs sm:text-sm transition-all hover:scale-[1.02] active:scale-[0.98]">
+                <i class="fa-solid fa-phone text-emerald-400 text-base"></i>
+                <span>Call Now</span>
+            </a>
+
+            <!-- WhatsApp Action Button -->
+            <a href="https://wa.me/919124082093" target="_blank" rel="noopener noreferrer" class="flex items-center justify-center gap-2 px-4 py-3 rounded-2xl bg-slate-900 border border-slate-800 hover:border-slate-700 text-slate-200 hover:text-white font-semibold text-xs sm:text-sm transition-all hover:scale-[1.02] active:scale-[0.98]">
+                <i class="fa-brands fa-whatsapp text-emerald-400 text-base"></i>
+                <span>WhatsApp</span>
+            </a>
+
+            <!-- QR Code Button -->
+            <button id="showQrBtn" class="flex items-center justify-center gap-2 px-4 py-3 rounded-2xl bg-slate-900 border border-slate-800 hover:border-slate-700 text-slate-200 hover:text-white font-semibold text-xs sm:text-sm transition-all hover:scale-[1.02] active:scale-[0.98]">
+                <i class="fa-solid fa-qrcode text-amber-400 text-base"></i>
+                <span>QR Code</span>
+            </button>
+
+            <!-- Share Card Button -->
+            <button id="shareCardBtn" class="flex items-center justify-center gap-2 px-4 py-3 rounded-2xl bg-slate-900 border border-slate-800 hover:border-slate-700 text-slate-200 hover:text-white font-semibold text-xs sm:text-sm transition-all hover:scale-[1.02] active:scale-[0.98]">
+                <i class="fa-solid fa-share-nodes text-blue-400 text-base"></i>
+                <span>Share Card</span>
+            </button>
+        </div>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="w-full max-w-xl text-center text-slate-500 text-xs py-3 mt-4 border-t border-slate-900 z-10">
+        <p>© 2026 Power Tech • Swain & Sons Power Tech Pvt. Ltd.</p>
+    </footer>
+
+    <!-- QR Code Modal -->
+    <div id="qrModal" class="fixed inset-0 bg-slate-950/80 backdrop-blur-md flex items-center justify-center p-4 z-50 hidden opacity-0 transition-opacity duration-300">
+        <div class="bg-slate-900 border border-slate-800 rounded-3xl p-6 sm:p-8 max-w-sm w-full text-center shadow-2xl relative transform scale-95 transition-transform duration-300" id="qrModalContent">
+            <!-- Close Button -->
+            <button id="closeQrBtn" class="absolute top-4 right-4 w-8 h-8 rounded-full bg-slate-800 text-slate-400 hover:text-white flex items-center justify-center transition-colors">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+
+            <div class="mb-4">
+                <div class="inline-flex p-3 rounded-2xl bg-red-600/10 text-red-500 mb-2">
+                    <i class="fa-solid fa-qrcode text-2xl"></i>
+                </div>
+                <h3 class="text-lg font-bold text-slate-100">Scan Digital Card</h3>
+                <p class="text-xs text-slate-400 mt-1">Scan using any phone camera to access contact details directly</p>
+            </div>
+
+            <!-- QR Code Container -->
+            <div class="bg-white p-4 rounded-2xl inline-block shadow-inner mb-4" id="qrcodeContainer"></div>
+
+            <p class="text-xs font-semibold text-slate-300">Dambarudhar Kar</p>
+            <p class="text-[11px] text-slate-400">Sr. Manager • Power Tech</p>
+
+            <button id="closeModalBottomBtn" class="w-full mt-5 py-2.5 bg-slate-800 hover:bg-slate-700 text-slate-200 text-xs font-semibold rounded-xl transition-colors">
+                Close
+            </button>
+        </div>
+    </div>
+
+    <!-- Feedback Toast Alert -->
+    <div id="toast" class="fixed bottom-6 left-1/2 -translate-x-1/2 bg-slate-900 border border-slate-700 text-slate-100 text-xs px-4 py-3 rounded-2xl shadow-2xl flex items-center gap-2 pointer-events-none opacity-0 translate-y-4 transition-all duration-300 z-50">
+        <i id="toastIcon" class="fa-solid fa-circle-check text-emerald-400 text-sm"></i>
+        <span id="toastMsg">Action completed successfully</span>
+    </div>
+
+    <!-- JavaScript Interactions & VCard Logic -->
+    <script>
+        // DOM Elements
+        const cardInner = document.getElementById('cardInner');
+        const flipBtnTop = document.getElementById('flipBtnTop');
+        const themeToggleBtn = document.getElementById('themeToggleBtn');
+        const downloadVCardBtn = document.getElementById('downloadVCardBtn');
+        const shareCardBtn = document.getElementById('shareCardBtn');
+        const showQrBtn = document.getElementById('showQrBtn');
+        const qrModal = document.getElementById('qrModal');
+        const qrModalContent = document.getElementById('qrModalContent');
+        const closeQrBtn = document.getElementById('closeQrBtn');
+        const closeModalBottomBtn = document.getElementById('closeModalBottomBtn');
+        const toast = document.getElementById('toast');
+        const toastMsg = document.getElementById('toastMsg');
+
+        // Card Flip State & Handler
+        let isFlipped = false;
+        function toggleCardFlip() {
+            isFlipped = !isFlipped;
+            if (isFlipped) {
+                cardInner.classList.add('rotate-y-180');
+            } else {
+                cardInner.classList.remove('rotate-y-180');
+            }
+        }
+
+        cardInner.addEventListener('click', (e) => {
+            if (e.target.closest('a')) return;
+            toggleCardFlip();
+        });
+
+        flipBtnTop.addEventListener('click', (e) => {
+            e.stopPropagation();
+            toggleCardFlip();
+        });
+
+        // Theme Toggle with persistence
+        const THEME_KEY = 'digital-card-theme';
+        const savedTheme = localStorage.getItem(THEME_KEY);
+        let isDarkMode = savedTheme ? savedTheme === 'dark' : true;
+
+        function updateThemeUI() {
+            if (isDarkMode) {
+                document.body.classList.remove('bg-slate-100', 'text-slate-900');
+                document.body.classList.add('bg-slate-950', 'text-slate-100');
+                themeToggleBtn.innerHTML = '<i class="fa-solid fa-moon text-sm"></i>';
+            } else {
+                document.body.classList.remove('bg-slate-950', 'text-slate-100');
+                document.body.classList.add('bg-slate-100', 'text-slate-900');
+                themeToggleBtn.innerHTML = '<i class="fa-solid fa-sun text-sm text-amber-500"></i>';
+            }
+        }
+
+        updateThemeUI();
+
+        themeToggleBtn.addEventListener('click', () => {
+            isDarkMode = !isDarkMode;
+            localStorage.setItem(THEME_KEY, isDarkMode ? 'dark' : 'light');
+            updateThemeUI();
+            showToast(isDarkMode ? 'Switched to Dark Mode' : 'Switched to Light Mode');
+        });
+
+        // Generate VCard File (.vcf)
+        downloadVCardBtn.addEventListener('click', () => {
+            const vCardData = `BEGIN:VCARD
+VERSION:3.0
+FN:Dambarudhar Kar
+N:Kar;Dambarudhar;;;
+TITLE:Sr. Manager
+ORG:Swain & Sons Power Tech Pvt. Ltd.
+TEL;TYPE=WORK,VOICE:0674-2954256
+TEL;TYPE=CELL,VOICE:+919124082093
+TEL;TYPE=CELL,VOICE:+918093533005
+TEL;TYPE=CELL,VOICE:+919124082092
+EMAIL;TYPE=WORK:project@pwrtch.com
+EMAIL;TYPE=WORK:sspt12@gmail.com
+URL;TYPE=WORK:http://www.pwrtch.com
+URL;TYPE=WORK:https://www.powerbazar.in/
+ADR;TYPE=WORK:;;K-8-82, Kalinga Nagar, Ghatikia;Bhubaneswar;Odisha;751029;India
+NOTE:Power Tech - 'We bring lights in life...' | Energy Audit, Renewable Energy, Power Generation & Compliance Consultancy
+END:VCARD`;
+
+            const blob = new Blob([vCardData], { type: 'text/vcard;charset=utf-8;' });
+            const url = URL.createObjectURL(blob);
+            const link = document.createElement('a');
+            link.href = url;
+            link.setAttribute('download', 'Dambarudhar_Kar_PowerTech.vcf');
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+            URL.revokeObjectURL(url);
+
+            showToast('Contact saved! VCard file downloaded.');
+        });
+
+        // Share Card Functionality
+        shareCardBtn.addEventListener('click', async () => {
+            const shareData = {
+                title: 'Dambarudhar Kar - Digital Business Card',
+                text: 'Digital Business Card of Dambarudhar Kar (Sr. Manager, Swain & Sons Power Tech Pvt. Ltd.)',
+                url: window.location.href
+            };
+
+            if (navigator.share) {
+                try {
+                    await navigator.share(shareData);
+                    showToast('Card shared successfully!');
+                } catch (err) {
+                    console.log('Share canceled or failed', err);
+                }
+            } else {
+                copyToClipboard(window.location.href);
+                showToast('Card Link copied to clipboard!');
+            }
+        });
+
+        function copyToClipboard(text) {
+            if (navigator.clipboard && window.isSecureContext) {
+                navigator.clipboard.writeText(text);
+            } else {
+                const textArea = document.createElement("textarea");
+                textArea.value = text;
+                textArea.style.position = "fixed";
+                textArea.style.left = "-999999px";
+                document.body.appendChild(textArea);
+                textArea.focus();
+                textArea.select();
+                try {
+                    document.execCommand('copy');
+                } catch (err) {
+                    console.error('Fallback copy failed', err);
+                }
+                document.body.removeChild(textArea);
+            }
+        }
+
+        // QR Code Modal
+        let qrGenerated = false;
+        showQrBtn.addEventListener('click', () => {
+            if (!qrGenerated) {
+                const qrContainer = document.getElementById('qrcodeContainer');
+                qrContainer.innerHTML = '';
+                new QRCode(qrContainer, {
+                    text: window.location.href,
+                    width: 160,
+                    height: 160,
+                    colorDark: "#0f172a",
+                    colorLight: "#ffffff",
+                    correctLevel: QRCode.CorrectLevel.H
+                });
+                qrGenerated = true;
+            }
+
+            qrModal.classList.remove('hidden');
+            setTimeout(() => {
+                qrModal.classList.remove('opacity-0');
+                qrModalContent.classList.remove('scale-95');
+                qrModalContent.classList.add('scale-100');
+            }, 10);
+        });
+
+        function closeQrModal() {
+            qrModal.classList.add('opacity-0');
+            qrModalContent.classList.remove('scale-100');
+            qrModalContent.classList.add('scale-95');
+            setTimeout(() => {
+                qrModal.classList.add('hidden');
+            }, 300);
+        }
+
+        closeQrBtn.addEventListener('click', closeQrModal);
+        closeModalBottomBtn.addEventListener('click', closeQrModal);
+        qrModal.addEventListener('click', (e) => {
+            if (e.target === qrModal) closeQrModal();
+        });
+
+        let toastTimeout;
+        function showToast(message) {
+            clearTimeout(toastTimeout);
+            toastMsg.textContent = message;
+            toast.classList.remove('opacity-0', 'translate-y-4');
+            toast.classList.add('opacity-100', 'translate-y-0');
+
+            toastTimeout = setTimeout(() => {
+                toast.classList.remove('opacity-100', 'translate-y-0');
+                toast.classList.add('opacity-0', 'translate-y-4');
+            }, 3000);
+        }
+    </script>
+</body>
+</html>
